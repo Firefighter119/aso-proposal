@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 ASO 阿瘦 × H2U — 全民健走・步印計畫 業務提案</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aso-terra:   #B85C2A;
+    --aso-brown:   #7B4019;
+    --aso-warm:    #D4845F;
+    --aso-cream:   #FAF5EF;
+    --aso-sand:    #E8DDD0;
+    --aso-dark:    #2C1A0E;
+    --aso-mid:     #5C3A1E;
+    --aso-stone:   #8C7B6B;
+    --gem-white:   #F0EDE8;
+    --gem-amber:   #E8A735;
+    --gem-rose:    #D4698A;
+    --gem-jade:    #3A9E78;
+    --gem-violet:  #7B5EA7;
+    --text-dark:   #2C1A0E;
+    --text-mid:    #5C4030;
+    --text-light:  #9A8070;
+    --border:      #E0D0C0;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--aso-cream);
+    color: var(--text-dark);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    min-height: 100vh;
+    background: var(--aso-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-left {
+    padding: 80px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+  }
+
+  .cover-right {
+    background: linear-gradient(135deg, var(--aso-terra) 0%, var(--aso-warm) 50%, #E8C4A0 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-right::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    top: -200px; right: -200px;
+  }
+
+  .cover-right::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.1);
+    bottom: -100px; left: -100px;
+  }
+
+  .cover-right-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 60px;
+    text-align: center;
+  }
+
+  .cover-tagline-big {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: 4px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+
+  .cover-tagline-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 20px;
+    letter-spacing: 2px;
+  }
+
+  .gem-preview {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .gem-dot {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px currentColor;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 48px;
+  }
+
+  .cover-badge::before {
+    content:'';width:6px;height:6px;border-radius:50%;
+    background: var(--aso-warm);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+  .cover h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 40px;
+    color: white;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .cover h1 span { color: var(--aso-warm); }
+
+  .cover-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    line-height: 2;
+    margin-bottom: 48px;
+  }
+
+  .cover-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .cover-meta-item {
+    border-left: 3px solid var(--aso-terra);
+    padding-left: 14px;
+  }
+
+  .cover-meta-item .lbl {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.35);
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .cover-meta-item .val {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+
+  .cover-version {
+    position: absolute;
+    bottom: 32px;
+    left: 80px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 1px;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 48px; }
+
+  /* ─── CHAPTER DIVIDER ─── */
+  .chapter {
+    padding: 48px 80px;
+    background: var(--aso-dark);
+    display: flex;
+    align-items: flex-end;
+    gap: 28px;
+  }
+
+  .chapter.terra { background: linear-gradient(135deg, var(--aso-terra), var(--aso-brown)); }
+  .chapter.stone { background: linear-gradient(135deg, #3A2A1E, #5C3A1E); }
+  .chapter.sage  { background: linear-gradient(135deg, #1E3A2A, #2E6040); }
+  .chapter.violet{ background: linear-gradient(135deg, #2A1E3A, #4A3060); }
+  .chapter.rose  { background: linear-gradient(135deg, #3A1E28, #602040); }
+
+  .ch-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 80px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+  }
+
+  .ch-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--aso-warm);
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .ch-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    padding: 64px 0 52px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .sec-hd {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 44px;
+  }
+
+  .sec-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--aso-terra);
+    letter-spacing: 2px;
+    padding-top: 10px;
+    white-space: nowrap;
+  }
+
+  .sec-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--aso-dark);
+    border-bottom: 3px solid var(--aso-terra);
+    padding-bottom: 10px;
+    flex: 1;
+  }
+
+  /* ─── EXECUTIVE SUMMARY ─── */
+  .exec {
+    background: var(--aso-dark);
+    padding: 64px 80px;
+    color: white;
+  }
+
+  .exec .sec-title { color: white; border-color: rgba(255,255,255,0.3); }
+  .exec .sec-num { color: rgba(255,255,255,0.4); }
+
+  .exec-lead {
+    font-size: 17px;
+    line-height: 2.1;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    margin-bottom: 52px;
+  }
+
+  .exec-lead strong { color: var(--aso-warm); font-weight: 700; }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .kpi { background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding: 28px 18px; text-align: center; }
+  .kpi:first-child { border-radius: 8px 0 0 8px; }
+  .kpi:last-child  { border-radius: 0 8px 8px 0; }
+
+  .kpi-n {
+    font-family: 'DM Mono', monospace;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--aso-warm);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .kpi-u { font-size: 12px; color: rgba(255,255,255,0.55); }
+  .kpi-lbl { font-size: 11px; color: rgba(255,255,255,0.4); margin-top:6px; }
+
+  /* ─── PROSE / SUB / CARDS ─── */
+  .prose { color: var(--text-mid); line-height: 2; margin-bottom: 20px; }
+  .prose strong { color: var(--text-dark); }
+
+  h3.sub {
+    font-size: 16px; font-weight: 700; color: var(--aso-dark);
+    margin: 36px 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  h3.sub::before {
+    content:''; width:4px; height:18px;
+    background: linear-gradient(to bottom, var(--aso-terra), var(--aso-warm));
+    border-radius: 2px; flex-shrink: 0;
+  }
+
+  .card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap:18px; margin:24px 0; }
+  .card-grid-2 { display: grid; grid-template-columns:1fr 1fr; gap:18px; margin:24px 0; }
+
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(100,60,20,0.06);
+  }
+
+  .card-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .card-title { font-size: 14px; font-weight: 700; color: var(--aso-dark); margin-bottom: 8px; }
+  .card-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+  /* ─── GEM SYSTEM ─── */
+  .gem-system {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 32px 0;
+    box-shadow: 0 8px 32px rgba(100,60,20,0.15);
+  }
+
+  .gem-card {
+    padding: 28px 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gem-card::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .gem-1 { background: linear-gradient(160deg, #4A3A2E, #6B5040); }
+  .gem-2 { background: linear-gradient(160deg, #7B5A18, #B88A30); }
+  .gem-3 { background: linear-gradient(160deg, #6B2840, #A04060); }
+  .gem-4 { background: linear-gradient(160deg, #1A5A38, #2E8A5A); }
+  .gem-5 { background: linear-gradient(160deg, #3A2860, #6A4890); }
+
+  .gem-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+  }
+
+  .gem-km {
+    font-family: 'DM Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .gem-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 6px;
+  }
+
+  .gem-type {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  .gem-reward {
+    margin-top: 12px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+  }
+
+  /* ─── HIGHLIGHT / INFO / ALERT BOXES ─── */
+  .hl-box {
+    background: linear-gradient(135deg, #FFF8F2, #FFF2E8);
+    border: 1px solid #E8C4A0;
+    border-left: 5px solid var(--aso-terra);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 22px 0;
+    color: var(--text-mid);
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .hl-box strong { color: var(--aso-terra); }
+
+  .info-box {
+    background: #FFF9EC;
+    border: 1px solid #F4C842;
+    border-left: 5px solid #E9C46A;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 18px 0;
+    color: #7A5C00;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .alert-box {
+    background: #FFF5F8;
+    border: 1px solid #E8A0B8;
+    border-left: 5px solid var(--gem-rose);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 18px 0;
+    color: #6A2040;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* ─── DATA TABLE ─── */
+  .data-table { width:100%; border-collapse:collapse; margin:22px 0; font-size:13px; }
+
+  .data-table thead tr {
+    background: linear-gradient(to right, var(--aso-dark), var(--aso-brown));
+    color: white;
+  }
+
+  .data-table th { padding: 13px 16px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: .5px; }
+  .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-mid); vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: #FAF5EF; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table .hl { font-weight: 700; color: var(--aso-terra); }
+
+  /* ─── TIMELINE ─── */
+  .timeline { position: relative; margin: 28px 0; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 22px; top:0; bottom:0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--aso-terra), var(--aso-warm), #E8C4A0);
+  }
+
+  .tl-item { display: flex; gap: 28px; margin-bottom: 28px; }
+
+  .tl-dot {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--aso-terra);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(184,92,42,0.2);
+  }
+
+  .tl-content {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 8px rgba(100,60,20,0.05);
+  }
+
+  .tl-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--aso-terra); letter-spacing: 1px; margin-bottom: 4px; }
+  .tl-title { font-weight: 700; font-size: 14px; color: var(--aso-dark); margin-bottom: 6px; }
+  .tl-desc { font-size: 12px; color: var(--text-mid); line-height: 1.7; }
+
+  /* ─── TAGS ─── */
+  .tag {
+    display: inline-block;
+    background: #FFF0E8;
+    color: var(--aso-terra);
+    border: 1px solid #E8C0A0;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 2px;
+  }
+
+  .tag.green { background: #F0FFF5; color: #2A8050; border-color: #A0D8B8; }
+  .tag.violet { background: #F5F0FF; color: #6A4890; border-color: #C0A8E0; }
+  .tag.amber { background: #FFF8E8; color: #A07020; border-color: #E0C070; }
+
+  /* ─── STAT STRIP ─── */
+  .stat-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin: 24px 0; }
+
+  .stat-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    border-top: 4px solid var(--aso-terra);
+  }
+
+  .stat-item.amber { border-top-color: var(--gem-amber); }
+  .stat-item.jade  { border-top-color: var(--gem-jade); }
+
+  .stat-n {
+    font-family: 'DM Mono', monospace;
+    font-size: 32px;
+    color: var(--aso-terra);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-item.amber .stat-n { color: var(--gem-amber); }
+  .stat-item.jade  .stat-n { color: var(--gem-jade); }
+
+  .stat-l { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ─── SOCIAL MISSION BLOCK ─── */
+  .mission-block {
+    background: linear-gradient(135deg, #1E3A2A, #2E6040);
+    border-radius: 16px;
+    padding: 40px;
+    color: white;
+    margin: 28px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mission-block::before {
+    content: '';
+    position: absolute;
+    right: -60px; bottom: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .mission-block h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .mission-block .mission-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 56px;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: 20px; right: 40px;
+    font-weight: 500;
+  }
+
+  .mission-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+
+  .mission-item {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .mission-item-title { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 6px; }
+  .mission-item-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+  /* ─── ROUTE MAP ─── */
+  .route-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+
+  .route-card {
+    padding: 24px 16px;
+    text-align: center;
+    color: white;
+  }
+
+  .route-card:nth-child(1) { background: linear-gradient(160deg, #3A2010, #6B4020); }
+  .route-card:nth-child(2) { background: linear-gradient(160deg, #1A3A2A, #2E6040); }
+  .route-card:nth-child(3) { background: linear-gradient(160deg, #1A2A4A, #2A4080); }
+  .route-card:nth-child(4) { background: linear-gradient(160deg, #4A2A10, #8A5020); }
+
+  .route-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .route-region { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .route-trail { font-size: 12px; opacity: .75; line-height: 1.5; }
+  .route-aso { font-size: 11px; opacity: .6; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 8px; }
+
+  /* ─── TWO COL ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 16px 0; }
+
+  /* ─── NUMBERED LIST ─── */
+  .num-list { counter-reset:n; list-style:none; margin:14px 0; }
+  .num-list li {
+    counter-increment: n;
+    display: flex; gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px; color: var(--text-mid); line-height: 1.7;
+  }
+  .num-list li:last-child { border-bottom: none; }
+  .num-list li::before {
+    content: counter(n, decimal-leading-zero);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; color: var(--aso-terra);
+    background: #FFF0E8;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; padding-top:1px;
+  }
+
+  /* ─── STYLED LIST ─── */
+  .slist { list-style: none; margin: 14px 0; }
+  .slist li { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid #F5EDE0; font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+  .slist li:last-child { border-bottom: none; }
+  .slist li::before { content: '›'; color: var(--aso-terra); font-size: 14px; padding-top: 2px; flex-shrink: 0; }
+
+  /* ─── SPORT COMPARISON ─── */
+  .sport-compare {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 0;
+    margin: 28px 0;
+    align-items: stretch;
+  }
+
+  .sport-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .sport-card.left { border-radius: 12px 0 0 12px; border-right: none; }
+  .sport-card.right { border-radius: 0 12px 12px 0; border-left: none; }
+
+  .sport-vs {
+    background: var(--aso-terra);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    writing-mode: vertical-rl;
+    letter-spacing: 4px;
+  }
+
+  .sport-title { font-size: 18px; font-weight: 700; color: var(--aso-dark); margin-bottom: 16px; }
+  .sport-sub { font-size: 11px; color: var(--aso-stone); margin-bottom: 16px; letter-spacing: 1px; }
+
+  /* ─── RISK TABLE ─── */
+  .risk-row { display: grid; grid-template-columns: 160px 1fr 80px; border-bottom: 1px solid var(--border); }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-cell { padding: 13px 14px; font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+  .badge { font-weight: 700; padding: 3px 10px; border-radius: 4px; font-size: 11px; display: inline-block; }
+  .badge.high { background:#FFF0EC; color:#C0392B; }
+  .badge.mid  { background:#FFF9EC; color:#D4650A; }
+  .badge.low  { background:#F0FFF5; color:#27AE60; }
+
+  /* ─── SROI ─── */
+  .sroi-ratio {
+    background: linear-gradient(135deg, var(--aso-terra), var(--aso-warm));
+    color: white;
+    padding: 28px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .sroi-n {
+    font-family: 'DM Mono', monospace;
+    font-size: 52px;
+    font-weight: 500;
+    display: block;
+    line-height: 1;
+  }
+
+  /* ─── SIGN / FOOTER ─── */
+  .sign-area {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 40px;
+    margin-top: 48px; padding-top: 40px;
+    border-top: 2px solid var(--border);
+  }
+
+  .sign-line { height: 1px; background: var(--text-dark); margin-bottom: 10px; }
+  .sign-title { font-size: 12px; color: var(--text-light); letter-spacing: .5px; text-align: center; }
+
+  .page-footer {
+    background: var(--aso-dark);
+    color: rgba(255,255,255,0.45);
+    padding: 28px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .5px;
+  }
+
+  .page-footer .conf { color: var(--aso-warm); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ COVER ════════════════════ -->
+<div class="cover">
+  <div class="cover-left">
+    <div>
+      <div class="cover-badge">BRAND COLLABORATION PROPOSAL · 2026–2027</div>
+      <h1>ASO 阿瘦<br><span>全民健走・步印計畫</span><br>× H2U iRunner</h1>
+      <p class="cover-sub">
+        步印任務 × 寶石任務 × 登山安全倡議 × 5 年計畫<br>
+        足健康促進 × O2O 全台百店賽道<br>
+        「走得更對」的全民行動
+      </p>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="lbl">提案方</div>
+        <div class="val">H2U 永悅健康<br>ESG 卓越服務中心</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="lbl">品牌主體</div>
+        <div class="val">A.S.O 阿瘦實業<br>Brand × ASO+ 阿瘦足健康</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="lbl">活動週期</div>
+        <div class="val">2026 年 Q3–Q4<br>（2026 Q3–Q4）</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="lbl">提案版本</div>
+        <div class="val">DOC-2026-ASO<br>-H2U-v2.0</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <div class="cover-right-inner">
+      <div class="cover-tagline-big">走<br>得<br>更<br>對</div>
+      <div class="cover-tagline-sub">每一步，都是對自己的承諾</div>
+      <div class="gem-preview">
+        <div class="gem-dot" style="background:#EDE8E0;color:#EDE8E0;"></div>
+        <div class="gem-dot" style="background:#E8A735;color:#E8A735;"></div>
+        <div class="gem-dot" style="background:#D4698A;color:#D4698A;"></div>
+        <div class="gem-dot" style="background:#3A9E78;color:#3A9E78;"></div>
+        <div class="gem-dot" style="background:#7B5EA7;color:#7B5EA7;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-version">DOC-2026-ASO-H2U-v4.0 · CONFIDENTIAL</div>
+</div>
+
+<!-- ════════════════════ EXEC SUMMARY ════════════════════ -->
+<div class="exec">
+  <div class="sec-hd">
+    <div class="sec-num">01 —</div>
+    <h2 class="sec-title">執行摘要 Executive Summary</h2>
+  </div>
+  <p class="exec-lead">
+    本提案由 <strong>H2U 永悅健康 ESG 卓越服務中心</strong> 向 A.S.O 阿瘦實業提出，
+    針對 2026 年品牌轉型戰略——從「鞋履品牌」進化為「行動力生活品牌」——設計一套
+    <strong>全台首個以「健走 × 超慢跑」為核心的線上賽事暨 O2O 社群體驗計畫</strong>。
+    有別於富邦 Run For Green™ 的「跑步種樹」主線，
+    本案以 ASO 獨有的<strong>「45 萬筆足壓大數據」</strong>作為核心差異化資產，
+    設計「步印寶石任務系統」——<strong>以公里數解鎖寶石、以寶石兌換足健康服務</strong>，
+    並將 ASO <strong>全台逾 100 間門市</strong>轉化為實體賽道節點，
+    串接健走筆記地圖路線、ASO＋足測站點與品牌聯名好禮，
+    目標在 2026 年 Q3–Q4 達成 <strong>25,000 人參與、100 萬公里步行里程、
+    1 萬人次門市足健康體驗</strong>之核心 KPI。
+  </p>
+  <div class="kpi-row">
+    <div class="kpi">
+      <span class="kpi-n">25,000+</span>
+      <div class="kpi-u">活動參與人數</div>
+      <div class="kpi-lbl">健走 ＋ 超慢跑合計</div>
+    </div>
+    <div class="kpi">
+      <span class="kpi-n">100萬</span>
+      <div class="kpi-u">目標里程（km）</div>
+      <div class="kpi-lbl">步行 × 超慢跑折算</div>
+    </div>
+    <div class="kpi">
+      <span class="kpi-n">1萬</span>
+      <div class="kpi-u">門市足測體驗人次</div>
+      <div class="kpi-lbl">ASO+ 足健康轉換</div>
+    </div>
+    <div class="kpi">
+      <span class="kpi-n">100+</span>
+      <div class="kpi-u">全台門市 O2O 節點</div>
+      <div class="kpi-lbl">實體賽道 × 兌換點</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ CH.2 BRAND CONTEXT ════════════════════ -->
+<div style="background:#FAF5EF;">
+<div class="chapter terra">
+  <div class="ch-num">02</div>
+  <div>
+    <div class="ch-tag">BRAND CONTEXT</div>
+    <div class="ch-title">為什麼是現在？ASO 的品牌轉型契機</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">02 —</div>
+    <h2 class="sec-title">ASO 74 年的品牌轉型契機</h2>
+  </div>
+
+  <p class="prose">
+    A.S.O 阿瘦成立 74 年，擁有台灣最龐大的鞋履實體通路（逾 100 間門市），
+    但正處於最關鍵的品牌轉型節點——從「賣鞋」走向「行動力生活品牌」。
+    這個轉型的最大障礙不是產品力，而是<strong>品牌敘事的穿透力</strong>：
+    消費者還未完全理解 ASO 在「足健康」與「行走科學」上的深度積累。
+  </p>
+
+  <p class="prose">
+    一個運動賽事，是最有效的「品牌敘事加速器」——它讓數字說話，讓身體感受，
+    讓品牌主張從廣告詞轉化為<strong>真實的生活體驗</strong>。
+    ASO 的 45 萬筆足壓數據、90% 步態異常的驚人洞察，需要一個舞台被聽見。
+  </p>
+
+  <div class="stat-strip">
+    <div class="stat-item">
+      <span class="stat-n">90%+</span>
+      <div class="stat-l">台灣民眾存在不同程度步態異常<br><span style="font-size:11px;color:#aaa;">ASO 45萬筆足壓大數據</span></div>
+    </div>
+    <div class="stat-item amber">
+      <span class="stat-n">9.1%</span>
+      <div class="stat-l">雙腳步態皆正常者不到 1 成<br><span style="font-size:11px;color:#aaa;">內偏 × 外偏 × 混合型分布</span></div>
+    </div>
+    <div class="stat-item jade">
+      <span class="stat-n">45萬+</span>
+      <div class="stat-l">累積足壓數據筆數<br><span style="font-size:11px;color:#aaa;">台灣最大步態資料庫</span></div>
+    </div>
+  </div>
+
+  <h3 class="sub">品牌轉型三軸對應</h3>
+  <div class="card-grid">
+    <div class="card" style="border-top: 4px solid var(--aso-terra);">
+      <span class="card-icon">👟</span>
+      <div class="card-title">ASO 日常生活軸</div>
+      <div class="card-desc">健走賽道——以「萬步鞋」為主線商品，全民健走活動成為新品上市的最佳場景，舒適 × 耐走 × 百搭的產品主張在賽道中自然呈現。</div>
+    </div>
+    <div class="card" style="border-top: 4px solid #2E86C1;">
+      <span class="card-icon">🔬</span>
+      <div class="card-title">ASO+ 機能科技軸</div>
+      <div class="card-desc">足測門市體驗——超慢跑達標後觸發 ASO+ 足健康體驗任務，以石墨烯 × 動磁等科技鞋款為轉換目標，從「感受步態」到「理解自己的腳」。</div>
+    </div>
+    <div class="card" style="border-top: 4px solid var(--gem-jade);">
+      <span class="card-icon">📊</span>
+      <div class="card-title">足健康數據資產化</div>
+      <div class="card-desc">每位完成足測的參與者，都為 ASO 的足壓資料庫貢獻一筆新數據，形成「活動吸引人 → 足測貢獻數據 → 數據支撐品牌主張」的正向飛輪。</div>
+    </div>
+  </div>
+
+  <div class="hl-box">
+    <p>⚑ <strong>關鍵洞察：</strong>ASO 的最大競爭優勢不是門市數量，而是<strong>對「行走這件事」的科學理解深度</strong>。
+    這份深度，不能只停留在門市 iPad 上的足測報告——它需要走進日常生活，走進社群，
+    走進那個每天 5,000 步、8,000 步的普通人心裡。全民健走活動，就是這個傳播載體。</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.3 ACTIVITY STRUCTURE ════════════════════ -->
+<div style="background:white;">
+<div class="chapter stone">
+  <div class="ch-num">03</div>
+  <div>
+    <div class="ch-tag">ACTIVITY STRUCTURE</div>
+    <div class="ch-title">活動雙系統架構：步印任務 × 寶石任務</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">03 —</div>
+    <h2 class="sec-title">活動雙系統架構 — 步印任務 × 寶石任務</h2>
+  </div>
+
+  <p class="prose">
+    本案的核心架構由<strong>兩套完全獨立、互相增強的系統</strong>構成：
+    「步印任務」以數量累積為核心，記錄每個人走了多少；
+    「寶石任務」以地理到訪為核心，記錄每個人走到哪裡。
+    兩者分別對應不同的行為動機——前者滿足<strong>持續性成就感</strong>，
+    後者激發<strong>探索慾望與打卡樂趣</strong>，共同構成完整的參與生態。
+  </p>
+
+  <!-- BIG TWO-SYSTEM OVERVIEW -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px; border-radius:14px; overflow:hidden; margin:32px 0; box-shadow:0 8px 32px rgba(100,60,20,0.12);">
+
+    <!-- LEFT: 步印任務 -->
+    <div style="background: linear-gradient(160deg, var(--aso-dark), #6B3A18); padding:36px 32px; color:white;">
+      <div style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px; color:rgba(255,255,255,0.45); margin-bottom:14px;">SYSTEM 01 · QUANTITY TRACK</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:26px; font-weight:700; color:white; margin-bottom:8px;">步印任務</div>
+      <div style="font-size:14px; color:rgba(255,255,255,0.65); margin-bottom:28px;">走了多少？ — 數量累積系統</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:18px;">
+          <div style="font-size:22px; margin-bottom:8px;">🚶</div>
+          <div style="font-size:13px; font-weight:700; color:white; margin-bottom:6px;">健走模式</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.7;">
+            記錄：<strong style="color:var(--aso-warm);">步數</strong><br>
+            數據來源：<br>
+            <strong style="color:rgba(255,255,255,0.9);">健行筆記 APP</strong><br>
+            背景執行自動計步
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:18px;">
+          <div style="font-size:22px; margin-bottom:8px;">🏃</div>
+          <div style="font-size:13px; font-weight:700; color:white; margin-bottom:6px;">超慢跑模式</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.7;">
+            記錄：<strong style="color:#80D8B0;">步數 ＋ 公里數</strong><br>
+            數據來源：<br>
+            <strong style="color:rgba(255,255,255,0.9);">Garmin / Strava</strong><br>
+            Nike Run / Apple Watch
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; background:rgba(255,255,255,0.06); border-radius:8px; padding:14px 16px; font-size:12px; color:rgba(255,255,255,0.65); line-height:1.8;">
+        ✦ 步數與公里數皆有<strong style="color:var(--aso-warm);">個人目標</strong>與<strong style="color:var(--aso-warm);">全體共同目標</strong>，詳見第 4.5 章
+      </div>
+    </div>
+
+    <!-- RIGHT: 寶石任務 -->
+    <div style="background: linear-gradient(160deg, #2A1508, #8A4010); padding:36px 32px; color:white;">
+      <div style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px; color:rgba(255,255,255,0.45); margin-bottom:14px;">SYSTEM 02 · LOCATION TRACK · 健行筆記 APP</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:26px; font-weight:700; color:white; margin-bottom:8px;">寶石任務</div>
+      <div style="font-size:14px; color:rgba(255,255,255,0.65); margin-bottom:28px;">走到哪裡？ — 地理位置收集系統</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:18px;">
+          <div style="font-size:22px; margin-bottom:8px;">⛰️</div>
+          <div style="font-size:13px; font-weight:700; color:white; margin-bottom:6px;">小百岳系列</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.7;">
+            寶石埋設於：<br>
+            <strong style="color:rgba(255,255,255,0.9);">各小百岳山頂三角點</strong><br>
+            GPS 到點自動觸發<br>
+            北／中／南／東山群
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:18px;">
+          <div style="font-size:22px; margin-bottom:8px;">👟</div>
+          <div style="font-size:13px; font-weight:700; color:white; margin-bottom:6px;">ASO 百店系列</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.7;">
+            寶石埋設於：<br>
+            <strong style="color:rgba(255,255,255,0.9);">ASO 全台 100+ 門市</strong><br>
+            到店 GPS 掃描觸發<br>
+            北／中／南／東分區
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; background:rgba(255,255,255,0.06); border-radius:8px; padding:14px 16px; font-size:12px; color:rgba(255,255,255,0.65); line-height:1.8;">
+        ✦ 寶石解鎖<strong style="color:var(--aso-warm);">與里程數無關</strong>，純粹以<strong style="color:var(--aso-warm);">親身到達指定地點</strong>為條件，透過健行筆記 APP GPS 自動判定
+      </div>
+    </div>
+  </div>
+
+  <div class="hl-box">
+    <p>⚑ <strong>核心設計邏輯：</strong>步印任務與寶石任務各司其職，不互相取代。
+    步印任務回答「我有多努力」，寶石任務回答「我去過哪些地方」。
+    一個人可以步數很高但寶石很少（每天在公園散步）；
+    也可以步數普通但寶石豐富（假日專程登小百岳）。
+    這種設計讓<strong>都市通勤族與假日健行者</strong>都能在同一個活動中找到自己的舞台。</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.4 GEM SYSTEM ════════════════════ -->
+<div style="background:#FAF5EF;">
+<div class="chapter" style="background: linear-gradient(135deg, #2C1A0E, #7A3A10);">
+  <div class="ch-num">04</div>
+  <div>
+    <div class="ch-tag">GEM SYSTEM · GPS LOCATION-BASED</div>
+    <div class="ch-title">寶石任務設計 — 小百岳 × ASO 百店</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">04 —</div>
+    <h2 class="sec-title">寶石任務 — 地理到點解鎖機制詳述</h2>
+  </div>
+
+  <p class="prose">
+    寶石任務完全依託<strong>健行筆記 APP 的 GPS 定位系統</strong>運作，
+    所有寶石均預先埋設於指定地點，參與者須<strong>親身到達現場</strong>才能觸發收集。
+    本案設計兩大系列共約 200 顆寶石，覆蓋從城市門市到高山三角點的完整地理光譜，
+    讓不同體力與偏好的參與者都能找到屬於自己的收集路徑。
+  </p>
+
+  <!-- HOW GEMS WORK -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:24px 0;">
+    <div class="card" style="border-top:4px solid var(--aso-terra); text-align:center;">
+      <div style="font-size:36px; margin-bottom:12px;">📍</div>
+      <div class="card-title">Step 1 — 出發前</div>
+      <div class="card-desc">開啟健行筆記 APP，在地圖上查看附近的 ASO 寶石（門市）或小百岳寶石（山頂），規劃今日的收集路線</div>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gem-amber); text-align:center;">
+      <div style="font-size:36px; margin-bottom:12px;">🚶</div>
+      <div class="card-title">Step 2 — 抵達現場</div>
+      <div class="card-desc">走進 ASO 門市或登上小百岳山頂，APP 偵測到 GPS 坐標落入寶石範圍（半徑約 50m）即自動觸發，無需手動操作</div>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gem-jade); text-align:center;">
+      <div style="font-size:36px; margin-bottom:12px;">💎</div>
+      <div class="card-title">Step 3 — 收集成就</div>
+      <div class="card-desc">寶石入袋，地圖標記完成，自動計入個人收集紀錄。每完成一定數量解鎖成就徽章，可一鍵分享 IG / LINE</div>
+    </div>
+  </div>
+
+  <!-- GEM SERIES 1: 小百岳 -->
+  <h3 class="sub">系列一：ASO × 小百岳寶石 ⛰️</h3>
+  <p class="prose">
+    台灣「小百岳」共 100 座，由內政部體委會（現體育署）認定，
+    難度從低至中等，適合一般大眾週末健行。
+    本案以健行筆記既有的小百岳寶石系統為基礎，
+    加入 <strong>ASO × 小百岳聯名限定寶石</strong>，在原有三角點寶石旁增設 ASO 品牌寶石，
+    完成指定數量可解鎖 ASO 獨家獎勵，形成雙重收集動機。
+  </p>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-radius:12px; overflow:hidden; margin:24px 0; box-shadow:0 4px 20px rgba(100,60,20,0.12);">
+    <!-- 北部 -->
+    <div style="background:linear-gradient(160deg,#2A1A0E,#6B3A18); padding:28px 18px; color:white;">
+      <div style="font-size:28px; margin-bottom:10px; text-align:center;">🗻</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:700; text-align:center; margin-bottom:12px;">北部山群</div>
+      <div style="font-size:11px; color:rgba(255,255,255,0.6); line-height:2; margin-bottom:12px;">
+        姜子寮山・五分山<br>七星山・大屯山<br>觀音山・文筆山<br>加里山・五寮尖<br>…等 25+ 座
+      </div>
+      <div style="background:rgba(255,255,255,0.1); border-radius:6px; padding:10px; font-size:11px; color:rgba(255,255,255,0.8); text-align:center;">
+        難度：低～中<br>
+        基隆・台北・新北<br>桃園・新竹
+      </div>
+    </div>
+    <!-- 中部 -->
+    <div style="background:linear-gradient(160deg,#1A2A1A,#3A6A30); padding:28px 18px; color:white;">
+      <div style="font-size:28px; margin-bottom:10px; text-align:center;">🌿</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:700; text-align:center; margin-bottom:12px;">中部山群</div>
+      <div style="font-size:11px; color:rgba(255,255,255,0.6); line-height:2; margin-bottom:12px;">
+        大坑步道群・鳶嘴山<br>頭嵙山・高美濕地<br>八卦山・虎頭山<br>玉山前峰・合歡山<br>…等 25+ 座
+      </div>
+      <div style="background:rgba(255,255,255,0.1); border-radius:6px; padding:10px; font-size:11px; color:rgba(255,255,255,0.8); text-align:center;">
+        難度：低～中高<br>
+        苗栗・台中<br>南投・彰化・雲林
+      </div>
+    </div>
+    <!-- 南部 -->
+    <div style="background:linear-gradient(160deg,#1A1A2A,#2A3A7A); padding:28px 18px; color:white;">
+      <div style="font-size:28px; margin-bottom:10px; text-align:center;">🌊</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:700; text-align:center; margin-bottom:12px;">南部山群</div>
+      <div style="font-size:11px; color:rgba(255,255,255,0.6); line-height:2; margin-bottom:12px;">
+        三地門・萬金山<br>旗尾山・龜山<br>蓮花台・鵝鑾鼻<br>高雄柴山・壽山<br>…等 25+ 座
+      </div>
+      <div style="background:rgba(255,255,255,0.1); border-radius:6px; padding:10px; font-size:11px; color:rgba(255,255,255,0.8); text-align:center;">
+        難度：低～中<br>
+        嘉義・台南<br>高雄・屏東
+      </div>
+    </div>
+    <!-- 東部 -->
+    <div style="background:linear-gradient(160deg,#2A1A1A,#7A3A2A); padding:28px 18px; color:white;">
+      <div style="font-size:28px; margin-bottom:10px; text-align:center;">🏔️</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:700; text-align:center; margin-bottom:12px;">東部山群</div>
+      <div style="font-size:11px; color:rgba(255,255,255,0.6); line-height:2; margin-bottom:12px;">
+        都歷山・奇美山<br>月眉山・知本山<br>太麻里山・大武山<br>清水大山・秀姑巒<br>…等 25+ 座
+      </div>
+      <div style="background:rgba(255,255,255,0.1); border-radius:6px; padding:10px; font-size:11px; color:rgba(255,255,255,0.8); text-align:center;">
+        難度：低～高<br>
+        宜蘭・花蓮・台東
+      </div>
+    </div>
+  </div>
+
+  <!-- 小百岳成就徽章 -->
+  <h3 class="sub">小百岳寶石 — ASO 聯名成就徽章體系</h3>
+  <p class="prose">
+    參考健行筆記小百岳原有「每 10 座解鎖一級徽章（LV1–LV10）」機制，
+    本案在其基礎上疊加 <strong>ASO 聯名加碼獎勵</strong>，
+    鼓勵既有健行筆記用戶將 ASO 品牌自然融入既有的登山收集行為。
+  </p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>完成座數</th>
+        <th>健行筆記原有成就</th>
+        <th>ASO 聯名加碼獎勵</th>
+        <th>目標族群</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="hl">10 座</td>
+        <td>LV1 鑽石山徽章（線上）</td>
+        <td>ASO 門市 <strong>95 折</strong>優惠碼 <span style="color:var(--aso-stone);font-size:11px;">（暫定）</span></td>
+        <td>新手入門，週末輕健行</td>
+      </tr>
+      <tr>
+        <td class="hl">25 座</td>
+        <td>LV2–LV3 徽章</td>
+        <td>ASO+ 足壓初評體驗券 <span style="color:var(--aso-stone);font-size:11px;">（暫定）</span></td>
+        <td>進階健行者，單日雙峰</td>
+      </tr>
+      <tr>
+        <td class="hl">50 座</td>
+        <td>LV5 徽章（半百完成）</td>
+        <td><strong>ASO × 小百岳聯名帆布袋</strong>限量實體獎勵</td>
+        <td>認真收集者，月均 4–6 座</td>
+      </tr>
+      <tr>
+        <td class="hl">75 座</td>
+        <td>LV7–LV8 徽章</td>
+        <td>ASO+ 動態足測完整報告（NT$600 市值）</td>
+        <td>進階挑戰者</td>
+      </tr>
+      <tr>
+        <td class="hl">100 座</td>
+        <td>LV10 黃金框完百徽章</td>
+        <td><strong>ASO 品牌大使認證 + 限量機能鞋款 × 1</strong><br><span style="font-size:11px;color:var(--aso-stone);">全台完百人數預估低於 500 人，極高稀缺性</span></td>
+        <td>完百菁英，年均 100+ 座</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- GEM SERIES 2: ASO 百店 -->
+    <!-- HIKING SAFETY ADVOCACY -->
+  <h3 class="sub" style="margin-top:44px;">⚠️ 登山安全倡議 × 健行筆記離線地圖教育</h3>
+  <p class="prose">
+    小百岳系列寶石的推廣，肩負一項不可迴避的社會責任：<strong>每一位走向山林的參與者，都應先做好安全準備。</strong>
+    台灣每年山難事故超過 1,000 件，其中因迷路、手機沒訊號而失聯的案例佔相當大比例。
+    本案以「倡議登山安全」作為小百岳系列的配套議題，
+    強制要求所有報名小百岳任務的參與者，先完成健行筆記 APP 的<strong>離線地圖教育課程</strong>，
+    方可解鎖寶石任務資格，將安全意識植入每一個探索行動的起點。
+  </p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0;">
+    <!-- 離線地圖教育 -->
+    <div style="background:linear-gradient(135deg,#1E3A28,#2A6040); border-radius:12px; padding:28px; color:white;">
+      <div style="font-size:32px; margin-bottom:12px;">🗺️</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:17px; font-weight:700; margin-bottom:14px; color:white;">健行筆記離線地圖強制教育</div>
+      <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.9; margin-bottom:16px;">
+        在無手機訊號的山區，離線地圖是生命線。健行筆記 APP 支援 GPX 離線路線下載，
+        即使在山頂無訊號處，仍可即時顯示位置與路線偏移警示。<br><br>
+        <strong style="color:#A0D8B0;">本案設計：</strong>首次點擊小百岳寶石任務的參與者，
+        強制導入「3 分鐘離線地圖快速教學」（含：下載離線路線、開啟背景定位、緊急求援號碼 119），
+        完成教學後方可啟動尋寶任務。
+      </p>
+      <div style="background:rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; font-size:12px; color:rgba(255,255,255,0.7);">
+        ✦ 預估可接觸教育人數：<strong style="color:white;">25,000 人+</strong>（小百岳任務啟動人次）<br>
+        ✦ 對應政策：體育署「登山安全推廣計畫」<br>
+        ✦ 可作為 SROI 公共教育效益之可量化指標
+      </div>
+    </div>
+
+    <!-- 山難預防倡議 -->
+    <div style="background:linear-gradient(135deg,#3A1E0E,#7A3A18); border-radius:12px; padding:28px; color:white;">
+      <div style="font-size:32px; margin-bottom:12px;">🆘</div>
+      <div style="font-family:'Noto Serif TC',serif; font-size:17px; font-weight:700; margin-bottom:14px; color:white;">山難預防三要素倡議</div>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+        <div style="background:rgba(255,255,255,0.1); border-radius:8px; padding:10px 14px; font-size:13px;">
+          <strong style="color:var(--aso-warm);">① 穿對鞋</strong>
+          <span style="color:rgba(255,255,255,0.75); font-size:12px; margin-left:8px;">ASO 足健康建議：依步態選擇登山鞋款，避免踝關節扭傷</span>
+        </div>
+        <div style="background:rgba(255,255,255,0.1); border-radius:8px; padding:10px 14px; font-size:13px;">
+          <strong style="color:var(--aso-warm);">② 下載地圖</strong>
+          <span style="color:rgba(255,255,255,0.75); font-size:12px; margin-left:8px;">健行筆記：出發前下載 GPX 離線地圖，山頂也能看到自己的位置</span>
+        </div>
+        <div style="background:rgba(255,255,255,0.1); border-radius:8px; padding:10px 14px; font-size:13px;">
+          <strong style="color:var(--aso-warm);">③ 告知行程</strong>
+          <span style="color:rgba(255,255,255,0.75); font-size:12px; margin-left:8px;">登山前留下行程計劃，緊急聯絡人知道你在哪裡</span>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; font-size:12px; color:rgba(255,255,255,0.7);">
+        ✦ ASO「穿對鞋」作為山難預防第一要素，自然融入品牌產品訴求<br>
+        ✦ 建議與消防署 / 體育署合作，取得官方背書，強化倡議公信力
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    💡 <strong>品牌戰略意義：</strong>「登山安全倡議」讓 ASO 從「賣登山鞋的品牌」
+    升格為「守護山上每一步的品牌」。這不是 CSR 附加項目，
+    而是直接連結 ASO 核心產品主張（對的鞋款減少受傷）的<strong>品牌功能性延伸</strong>，
+    是市場上目前沒有任何鞋履品牌在做的公共衛生議題。
+  </div>
+
+  <h3 class="sub" style="margin-top:44px;">系列二：ASO 百店到訪寶石 👟</h3>
+  <p class="prose">
+    以 ASO 全台逾 100 間門市作為「城市寶石站」，
+    每間門市門口設置一顆 ASO 品牌寶石，
+    參與者進入門市範圍（GPS 半徑 50 公尺）即自動觸發收集。
+    門市寶石的設計邏輯與小百岳相同，但對象是<strong>都市型健走者、通勤族與購物客</strong>，
+    不需要爬山，只要走進門市就能收集。
+  </p>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-radius:12px; overflow:hidden; margin:24px 0; box-shadow:0 4px 20px rgba(100,60,20,0.12);">
+    <div style="background:linear-gradient(160deg,#3A1A0E,#8A4020); padding:24px 16px; color:white; text-align:center;">
+      <div style="font-size:28px; margin-bottom:8px;">🏙️</div>
+      <div style="font-size:16px; font-weight:700; margin-bottom:10px;">北部</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.7); line-height:1.8;">台北市各區旗艦店<br>新北・基隆・桃園<br>新竹地區門市<br>約 40+ 間</div>
+      <div style="margin-top:12px; background:rgba(255,255,255,0.12); border-radius:6px; padding:8px; font-size:11px;">北部限定寶石款式</div>
+    </div>
+    <div style="background:linear-gradient(160deg,#1A3A1E,#3A7A40); padding:24px 16px; color:white; text-align:center;">
+      <div style="font-size:28px; margin-bottom:8px;">🏢</div>
+      <div style="font-size:16px; font-weight:700; margin-bottom:10px;">中部</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.7); line-height:1.8;">台中市各區門市<br>苗栗・彰化・南投<br>雲林・嘉義地區<br>約 25+ 間</div>
+      <div style="margin-top:12px; background:rgba(255,255,255,0.12); border-radius:6px; padding:8px; font-size:11px;">中部限定寶石款式</div>
+    </div>
+    <div style="background:linear-gradient(160deg,#1A1A3A,#2A3A8A); padding:24px 16px; color:white; text-align:center;">
+      <div style="font-size:28px; margin-bottom:8px;">🌆</div>
+      <div style="font-size:16px; font-weight:700; margin-bottom:10px;">南部</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.7); line-height:1.8;">台南市各區門市<br>高雄市各區門市<br>屏東地區<br>約 30+ 間</div>
+      <div style="margin-top:12px; background:rgba(255,255,255,0.12); border-radius:6px; padding:8px; font-size:11px;">南部限定寶石款式</div>
+    </div>
+    <div style="background:linear-gradient(160deg,#2A1A1A,#8A3A2A); padding:24px 16px; color:white; text-align:center;">
+      <div style="font-size:28px; margin-bottom:8px;">🌅</div>
+      <div style="font-size:16px; font-weight:700; margin-bottom:10px;">東部</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.7); line-height:1.8;">宜蘭地區門市<br>花蓮地區門市<br>台東地區門市<br>約 10+ 間</div>
+      <div style="margin-top:12px; background:rgba(255,255,255,0.12); border-radius:6px; padding:8px; font-size:11px;">東部限定寶石款式</div>
+    </div>
+  </div>
+
+  <!-- ASO Store achievement -->
+  <h3 class="sub">ASO 百店寶石 — 到訪成就體系</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>到訪門市數</th>
+        <th>達成稱號</th>
+        <th>ASO 即時獎勵</th>
+        <th>行為目的</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="hl">1 間</td>
+        <td>🤍 步印初訪者</td>
+        <td>當日消費 9 折優惠（門市立即兌換）</td>
+        <td>首次進店轉換</td>
+      </tr>
+      <tr>
+        <td class="hl">5 間（同區）</td>
+        <td>🟡 區域漫步者</td>
+        <td>ASO+ 足壓初評券 × 1（NT$300）</td>
+        <td>同區多店探訪</td>
+      </tr>
+      <tr>
+        <td class="hl">10 間（跨區）</td>
+        <td>🌸 全台漫步者</td>
+        <td>ASO 聯名步印布章 × 1 <span style="color:var(--aso-stone);font-size:11px;">（暫定，限量）</span></td>
+        <td>跨區旅遊結合購物</td>
+      </tr>
+      <tr>
+        <td class="hl">25 間</td>
+        <td>💚 步印探索家</td>
+        <td>ASO+ 動態足測完整報告 <span style="color:var(--aso-stone);font-size:11px;">（暫定）</span></td>
+        <td>高忠誠度深度參與</td>
+      </tr>
+      <tr>
+        <td class="hl">50 間</td>
+        <td>💜 步印傳說</td>
+        <td><strong>ASO 品牌大使認定 + 年度新款優先購 <span style="color:var(--aso-stone);font-size:11px;">（暫定）</span></strong><br><span style="font-size:11px;color:var(--aso-stone);">預估全台僅個位數達成，極高稀缺性與媒體話題性</span></td>
+        <td>品牌最高忠誠象徵</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- COMBINED ACHIEVEMENT -->
+  <h3 class="sub">雙系列合體挑戰 — 「山城步印」聯合成就</h3>
+  <div style="background:linear-gradient(135deg, var(--aso-dark), #5C3A1E); border-radius:12px; padding:32px; margin:24px 0; color:white;">
+    <div style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:700; margin-bottom:16px;">
+      🏆 同時完成小百岳＋百店挑戰，解鎖「山城步印傳說」終極成就
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:20px;">
+      <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:16px; text-align:center;">
+        <div style="font-size:28px; margin-bottom:8px;">⛰️ ＋ 👟</div>
+        <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9);">小百岳 50 座<br>＋ ASO 10 店</div>
+        <div style="font-size:11px; color:rgba(255,255,255,0.55); margin-top:6px;">「山城行者」<br>聯名實體徽章</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:16px; text-align:center;">
+        <div style="font-size:28px; margin-bottom:8px;">🌏</div>
+        <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9);">四區山群各完成<br>5 座＋對應門市</div>
+        <div style="font-size:11px; color:rgba(255,255,255,0.55); margin-top:6px;">「全台步印」<br>四區完成紀念禮</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:16px; text-align:center;">
+        <div style="font-size:28px; margin-bottom:8px;">💎</div>
+        <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9);">小百岳 100 座<br>＋ ASO 50 店</div>
+        <div style="font-size:11px; color:rgba(255,255,255,0.55); margin-top:6px;">「山城步印傳說」<br>終極大使認證</div>
+      </div>
+    </div>
+    <div style="margin-top:18px; font-size:12px; color:rgba(255,255,255,0.5); border-top:1px solid rgba(255,255,255,0.1); padding-top:14px;">
+      ＊ 以上成就為活動期間（2026 Q3–Q4）累計，里程數不計入寶石解鎖條件，僅以 GPS 到點紀錄為準。
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.4.5 GOALS & MILESTONES ════════════════════ -->
+<div style="background:white;">
+<div class="chapter" style="background: linear-gradient(135deg, #3A1E10, #8A4820);">
+  <div class="ch-num">4.5</div>
+  <div>
+    <div class="ch-tag">INDIVIDUAL & COLLECTIVE GOALS · 步印任務</div>
+    <div class="ch-title">步印任務 — 個人目標 × 全體共同目標 × 階段獎勵</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">4.5 —</div>
+    <h2 class="sec-title">步印任務 — 個人 × 全體雙層目標體系</h2>
+  </div>
+
+  <p class="prose">
+    步印任務（步數＋公里數）採用<strong>「雙層目標結構」</strong>——
+    每位參與者同時追求個人成就與全體共同目標。
+    依健走（步數）與超慢跑（里程）兩軌分別設計，
+    個人達標享即時獎勵，全體達標時 ASO 對全體兌現公益承諾。
+  </p>
+
+  <!-- TRACK A: STEPS -->
+  <h3 class="sub">4.1 健走軌道 — 步數目標體系</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:20px 0;">
+    <div style="background:white; border:1px solid var(--border); border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(100,60,20,0.07);">
+      <div style="background:linear-gradient(to right, var(--aso-dark), var(--aso-terra)); color:white; padding:16px 22px;">
+        <div style="font-size:11px; letter-spacing:2px; opacity:.7; font-family:'DM Mono',monospace; margin-bottom:4px;">PERSONAL GOAL</div>
+        <div style="font-size:16px; font-weight:700;">🚶 個人步數目標</div>
+      </div>
+      <div style="padding:20px 22px;">
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead><tr style="background:#FAF5EF;">
+            <th style="padding:8px 10px; text-align:left; color:var(--aso-terra); font-size:11px;">累積步數</th>
+            <th style="padding:8px 10px; text-align:left; color:var(--aso-terra); font-size:11px;">稱號</th>
+            <th style="padding:8px 10px; text-align:left; color:var(--aso-terra); font-size:11px;">個人獎勵</th>
+          </tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">10,000 步</td>
+              <td style="padding:9px 10px;">🤍 白玉行者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO 門市 10% 折扣碼</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:#FAF9F7;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">50,000 步</td>
+              <td style="padding:9px 10px;">🟡 琥珀行者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO+ 足壓初評券（NT$300）</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">150,000 步</td>
+              <td style="padding:9px 10px;">🌸 玫瑰行者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO 聯名步印帆布袋＋85折</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:#FAF9F7;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">300,000 步</td>
+              <td style="padding:9px 10px;">💚 翡翠行者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO+ 動態足測完整報告 <span style="color:var(--aso-stone);font-size:11px;">（暫定）</span></td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">1,000,000 步</td>
+              <td style="padding:9px 10px;">💜 紫晶行者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO 品牌大使認證＋限量鞋優先購</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white; border:1px solid var(--border); border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(100,60,20,0.07);">
+      <div style="background:linear-gradient(to right, #5C3A1E, #B85C2A); color:white; padding:16px 22px;">
+        <div style="font-size:11px; letter-spacing:2px; opacity:.7; font-family:'DM Mono',monospace; margin-bottom:4px;">COLLECTIVE GOAL</div>
+        <div style="font-size:16px; font-weight:700;">🌍 全體步數共同目標</div>
+      </div>
+      <div style="padding:20px 22px;">
+        <p style="font-size:13px; color:var(--text-mid); line-height:1.8; margin-bottom:14px;">全體步數匯聚共同計數器，每達里程碑即觸發全民加碼</p>
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead><tr style="background:#FAF5EF;">
+            <th style="padding:8px 10px; text-align:left; color:var(--aso-terra); font-size:11px;">全體累積步數</th>
+            <th style="padding:8px 10px; text-align:left; color:var(--aso-terra); font-size:11px;">全民加碼獎勵</th>
+          </tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">1 億步</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">全體解鎖 ASO 線上獨家優惠週</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:#FAF9F7;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">5 億步</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">捐贈 3,000 份長者足測券</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">10 億步</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">全體解鎖「金步印」限定寶石＋大抽獎</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:#FAF9F7;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">30 億步</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">捐贈 10,000 份長者足測（公益達標宣告）</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px; font-weight:700; color:var(--aso-terra);">100 億步</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">全體限量「步印傳說」實體紀念品</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRACK B: KM -->
+  <h3 class="sub">4.2 超慢跑軌道 — 里程數目標體系</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:20px 0;">
+    <div style="background:white; border:1px solid #A0D8B8; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(58,158,120,0.10);">
+      <div style="background:linear-gradient(to right, #1A3A2A, #2E8A5A); color:white; padding:16px 22px;">
+        <div style="font-size:11px; letter-spacing:2px; opacity:.7; font-family:'DM Mono',monospace; margin-bottom:4px;">PERSONAL GOAL · RUNNERS ONLY</div>
+        <div style="font-size:16px; font-weight:700;">🏃 個人超慢跑里程目標</div>
+      </div>
+      <div style="padding:20px 22px;">
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead><tr style="background:#F0FFF8;">
+            <th style="padding:8px 10px; text-align:left; color:var(--gem-jade); font-size:11px;">累積里程</th>
+            <th style="padding:8px 10px; text-align:left; color:var(--gem-jade); font-size:11px;">稱號</th>
+            <th style="padding:8px 10px; text-align:left; color:var(--gem-jade); font-size:11px;">個人獎勵</th>
+          </tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #D0EED8;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">5 km</td>
+              <td style="padding:9px 10px;">🌿 入門跑者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">超慢跑入門指南電子書</td>
+            </tr>
+            <tr style="border-bottom:1px solid #D0EED8; background:#F8FFFB;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">21 km</td>
+              <td style="padding:9px 10px;">🌳 半馬行者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO+ 足測體驗券（NT$600）</td>
+            </tr>
+            <tr style="border-bottom:1px solid #D0EED8;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">42 km</td>
+              <td style="padding:9px 10px;">🏅 全馬行者</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO 聯名機能跑鞋 85 折</td>
+            </tr>
+            <tr style="border-bottom:1px solid #D0EED8; background:#F8FFFB;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">100 km</td>
+              <td style="padding:9px 10px;">💚 百公里傳說</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO 品牌大使資格＋紀念禮盒</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">300 km</td>
+              <td style="padding:9px 10px;">💜 步印菁英</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO × 健行筆記聯名年度最強榮譽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white; border:1px solid #A0D8B8; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(58,158,120,0.10);">
+      <div style="background:linear-gradient(to right, #1E5A38, #2E9A60); color:white; padding:16px 22px;">
+        <div style="font-size:11px; letter-spacing:2px; opacity:.7; font-family:'DM Mono',monospace; margin-bottom:4px;">COLLECTIVE GOAL · RUNNERS ONLY</div>
+        <div style="font-size:16px; font-weight:700;">🌏 全體超慢跑里程共同目標</div>
+      </div>
+      <div style="padding:20px 22px;">
+        <p style="font-size:13px; color:var(--text-mid); line-height:1.8; margin-bottom:14px;">所有跑者公里數匯聚，每突破里程碑 ASO 兌現社會承諾</p>
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+          <thead><tr style="background:#F0FFF8;">
+            <th style="padding:8px 10px; text-align:left; color:var(--gem-jade); font-size:11px;">全體累積里程</th>
+            <th style="padding:8px 10px; text-align:left; color:var(--gem-jade); font-size:11px;">ASO 對應承諾</th>
+          </tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #D0EED8;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">10,000 km</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">捐贈 500 份長者足測券，啟動「萬步送健康」</td>
+            </tr>
+            <tr style="border-bottom:1px solid #D0EED8; background:#F8FFFB;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">50,000 km</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">全體跑者解鎖「超慢跑先鋒」數位勳章</td>
+            </tr>
+            <tr style="border-bottom:1px solid #D0EED8;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">100,000 km</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">ASO 舉辦百萬公里達成公益發表會</td>
+            </tr>
+            <tr style="border-bottom:1px solid #D0EED8; background:#F8FFFB;">
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">200,000 km</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">捐贈 5,000 份足測＋全體翡翠里程勳章</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px; font-weight:700; color:var(--gem-jade);">500,000 km</td>
+              <td style="padding:9px 10px; color:var(--text-mid);">達成 10,000 份足測公益總目標，全台宣告</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visual Progress Bar -->
+  <div style="background: linear-gradient(135deg, var(--aso-dark), #5C3A1E); border-radius:12px; padding:28px 32px; margin:24px 0; color:white; position:relative; overflow:hidden;">
+    <div style="position:absolute; right:20px; top:50%; transform:translateY(-50%); font-size:80px; opacity:.05;">👣</div>
+    <div style="font-family:'Noto Serif TC',serif; font-size:17px; font-weight:700; margin-bottom:18px;">平台主會場：雙軌進度條視覺化（設計示意）</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-bottom:8px;">🚶 全體步數里程池</div>
+        <div style="background:rgba(255,255,255,0.1); border-radius:20px; height:14px; overflow:hidden; margin-bottom:6px;">
+          <div style="background:linear-gradient(to right, var(--aso-terra), var(--aso-warm)); width:62%; height:100%; border-radius:20px;"></div>
+        </div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.7);">62 億步 ／ 100 億步 <span style="color:var(--aso-warm);">62%</span></div>
+      </div>
+      <div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-bottom:8px;">🏃 全體跑步里程池</div>
+        <div style="background:rgba(255,255,255,0.1); border-radius:20px; height:14px; overflow:hidden; margin-bottom:6px;">
+          <div style="background:linear-gradient(to right, var(--gem-jade), #60D0A0); width:38%; height:100%; border-radius:20px;"></div>
+        </div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.7);">192,000 km ／ 500,000 km <span style="color:#60D0A0;">38%</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.5 SOCIAL MISSION ════════════════════ -->
+<!-- ════════════════════ CH.5 SOCIAL MISSION ════════════════════ -->
+<div style="background:white;">
+<div class="chapter sage">
+  <div class="ch-num">05</div>
+  <div>
+    <div class="ch-tag">SOCIAL MISSION</div>
+    <div class="ch-title">社會使命標的：萬步送健康</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">05 —</div>
+    <h2 class="sec-title">社會使命標的：「萬步送健康」計畫</h2>
+  </div>
+
+  <p class="prose">
+    樹木是富邦的社會承諾錨點。ASO 需要一個屬於自己、更具品牌專屬性的社會價值主張。
+    答案就在 ASO 最深厚的資產裡——<strong>足部健康數據與足測技術</strong>。
+    台灣高齡社會中，步態異常與跌倒風險是最被忽視的公衛議題之一，
+    65 歲以上長者每年跌倒率高達 30%，其中足弓塌陷與步態偏移是主要風險因子。
+  </p>
+
+  <div class="mission-block">
+    <div class="mission-num">10,000</div>
+    <h3>🎯 活動社會使命：「走一萬步，守護一位長者」</h3>
+    <p style="color:rgba(255,255,255,0.8); font-size:15px; line-height:2; margin-bottom:24px;">
+      每當全體參與者累積達 <strong style="color:#A0DFC0;">10 萬步（100 km）</strong>，
+      ASO 即向合作社福單位（如弘道老人福利基金會）
+      捐贈一份 <strong style="color:#A0DFC0;">免費 ASO+ 足壓量測服務券</strong>，
+      讓社區長者獲得專業步態評估。<br>
+      目標：活動期間累計捐贈 <strong style="color:#E8C080;">10,000 份</strong> 長者足測，
+      建立台灣最大規模的長者步態健康資料庫。
+    </p>
+    <div class="mission-items">
+      <div class="mission-item">
+        <div class="mission-item-title">📊 數據層：建立長者步態基準</div>
+        <div class="mission-item-desc">10,000 筆長者足測數據，豐富 ASO 現有 45 萬筆資料庫，並可與學術機構合作進行台灣長者步態研究，強化 ASO 足健康品牌的學術公信力。</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-item-title">❤️ 公益層：高齡跌倒預防</div>
+        <div class="mission-item-desc">每份足測報告提供個人化行走改善建議，搭配 ASO 鞋款推薦，直接降低長者跌倒風險，回應台灣老齡化社會的公衛需求。</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-item-title">🏬 通路層：門市體驗轉換</div>
+        <div class="mission-item-desc">長者持兌換券前往門市時，帶動家屬同行，一次服務觸及 2–3 位潛在消費者，形成「公益行動 → 實體流量 → 品牌體驗」的轉換鏈路。</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-item-title">📣 傳播層：世代共鳴敘事</div>
+        <div class="mission-item-desc">「你走的每一步，守護的是別人的健康」——這個主題具備極高的跨世代情感共鳴，是最適合台灣家庭文化的 CSR 傳播語言。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hl-box">
+    <p>⚑ <strong>與富邦種樹的差異化定位：</strong>富邦的承諾是「每一步為台灣種一棵樹（環境 × 大地）」，
+    ASO 的承諾是「你走的每一步，守護一位長者的行動力（健康 × 家人）」。
+    兩者的情感錨點截然不同——ASO 的更貼近家庭、更直接、更有 ASO 品牌的專屬印記。
+    這不是借用別人的 CSR 語言，<strong>而是從自己的 DNA 裡長出來的社會使命</strong>。</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.6 ACTIVITY PLAN ════════════════════ -->
+<div style="background:#FAF5EF;">
+<div class="chapter" style="background: linear-gradient(135deg, #5C3A1E, #B85C2A);">
+  <div class="ch-num">06</div>
+  <div>
+    <div class="ch-tag">ACTIVITY PLAN</div>
+    <div class="ch-title">活動架構與年度執行規劃</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">06 —</div>
+    <h2 class="sec-title">活動架構與年度執行規劃</h2>
+  </div>
+
+  <h3 class="sub">一、年度三波次主題架構</h3>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">👟</div>
+      <div class="tl-content">
+        <div class="tl-date">2026 / 07 / 01 — 08 / 31 · WAVE 1 · Q3 夏日啟動波</div>
+        <div class="tl-title">全民步印啟動 × 小百岳夏日健行季</div>
+        <div class="tl-desc">
+          7 月正式啟動「步印任務」與「寶石任務」雙系統，<br>
+          開放健行筆記 APP 小百岳 ASO 聯名寶石全台解鎖，同步上線百店步印站掃碼地圖。<br>
+          舉辦「ASO × 健行筆記 山上見！」夏日健行活動，北中南東各一場（各 100–150 人），<br>
+          ASO 足健康師現場提供足測服務，同時宣導健行筆記離線地圖使用與山難預防知識。
+          <br><br>
+          <span class="tag">7/11 世界人口日 🌍 全民健走啟動</span>
+          <span class="tag amber">7/26 世界運動日 🏃 超慢跑加碼開跑</span>
+          <span class="tag green">8/15 全台健行日 ⛰️ 小百岳衝刺月</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">💎</div>
+      <div class="tl-content">
+        <div class="tl-date">2026 / 09 / 01 — 10 / 31 · WAVE 2 · Q3末–Q4 衝刺收穫波</div>
+        <div class="tl-title">超慢跑衝刺 × 百店寶石地圖全開放</div>
+        <div class="tl-desc">
+          9 月啟動超慢跑衝刺月（個人里程加碼任務），全台 ASO 百店寶石站全數開放。<br>
+          10 月「ASO 超慢跑城市日」北中南各一場城市導覽跑（各 150 人），<br>
+          由 ASO 足健康師帶領，現場提供足測體驗，並宣導超慢跑安全知識。
+          <br><br>
+          <span class="tag">9/22 世界無車日 🚲 低碳步行日</span>
+          <span class="tag violet">10/4 世界動物日 🐾 登山愛自然</span>
+          <span class="tag green">10/10 國慶健走 🇹🇼 全台同步步印</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏆</div>
+      <div class="tl-content">
+        <div class="tl-date">2026 / 11 / 01 — 12 / 15 · WAVE 3 · Q4 步印成果發表波</div>
+        <div class="tl-title">步印寶石總決算 × 萬步送健康成果發表</div>
+        <div class="tl-desc">
+          11 月步印總排行榜最終衝刺，發布「最強行者」榜（個人 / 隊伍 Top 30）。<br>
+          11/14 世界糖尿病日：ASO × H2U 健康無糖日聯合發表「長者足測公益達成」成果記者會，<br>
+          媒體公關高峰期，ASO 品牌形象與 ESG 敘事收割。<br>
+          12/15 年度成果發表 × 2027 年預告。
+          <br><br>
+          <span class="tag amber">11/14 世界糖尿病日 💊 公益成果發表</span>
+          <span class="tag violet">12/15 年度步印頒獎典禮 🏆 品牌總結</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub">二、健行筆記路線整合策略</h3>
+  <div class="card-grid-2">
+    <div class="card">
+      <div class="card-title">📍 健行筆記 × ASO 聯名路線包</div>
+      <div class="card-desc">
+        與健行筆記合作，精選全台 20 條「ASO 認證足健康步道」，
+        每條路線附上 ASO 足健康提示（坡度 × 路面材質 × 建議鞋型 × 步態注意事項），
+        完成路線可解鎖專屬步印徽章，強化「走對路，穿對鞋」的品牌敘事。
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔮 健行筆記寶石機制對應</div>
+      <div class="card-desc">
+        健行筆記現有「打卡收集寶石」機制可與 ASO 步印寶石系統雙向打通：
+        健行筆記用戶完成 ASO 指定路線後，獲得的健行筆記積分同步轉換為 ASO 步印點數，
+        兩個平台的會員互導，擴大跨平台觸及。
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub">三、社群激勵機制</h3>
+  <table class="data-table">
+    <thead>
+      <tr><th>機制名稱</th><th>觸發條件</th><th>上限</th><th>設計目的</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>每步好禮</strong></td><td>健行筆記 APP 每日步數上傳（健走模式）</td><td>每週 1 次</td><td>提升 APP 日常活躍度</td></tr>
+      <tr><td><strong>跑步就抽獎</strong></td><td>超慢跑數據成功上傳（跑步模式，首次當週）</td><td>每週 1 次</td><td>提升跑者數據回傳頻率</td></tr>
+      <tr><td><strong>步印寶石達陣</strong></td><td>每解鎖一枚新步印寶石（步數達標）</td><td>5 次（5 顆）</td><td>里程碑正向強化</td></tr>
+      <tr><td><strong>里程達標獎</strong></td><td>超慢跑累積 21 km / 42 km / 100 km（跑步模式）</td><td>3 次</td><td>跑者個人里程碑激勵</td></tr>
+      <tr><td><strong>全體解鎖加碼</strong></td><td>全體步數 / 全體里程達到階段目標時，自動觸發</td><td>各 5 次（兩軌各別）</td><td>集體目標共同慶賀</td></tr>
+      <tr><td><strong>呼朋引伴獎</strong></td><td>邀請碼拉新，被邀者完成首次數據上傳即觸發</td><td>無上限</td><td>最強病毒推廣機制</td></tr>
+      <tr><td><strong>全家步印獎</strong></td><td>同帳號家庭隊（≥3 人）合計步數達 100,000 步</td><td>1 次/波次</td><td>吸引家庭型 TA</td></tr>
+      <tr><td><strong>門市打卡王</strong></td><td>集滿 5 間以上不同門市步印站掃碼打卡</td><td>1 次/波次</td><td>門市 O2O 流量導入</td></tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.7 H2U VALUE ════════════════════ -->
+<div style="background:white;">
+<div class="chapter" style="background: linear-gradient(135deg, #2C1A0E, #5C3A1E);">
+  <div class="ch-num">07</div>
+  <div>
+    <div class="ch-tag">H2U VALUE PROPOSITION</div>
+    <div class="ch-title">H2U × iRunner 的合作價值主張</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">07 —</div>
+    <h2 class="sec-title">H2U × iRunner 合作價值主張</h2>
+  </div>
+
+  <div class="card-grid-2">
+    <div class="card" style="border-top: 4px solid var(--aso-terra);">
+      <div class="card-title" style="font-size:15px;">🏗️ iRunner 平台技術能力</div>
+      <ul class="slist" style="margin-top:12px;">
+        <li>步數雙軌追蹤：健行筆記 APP 背景執行，即時累計走路步數</li>
+        <li>跑步里程串接：Garmin / Strava / Nike Run / Apple Watch 等跑步 APP 數據匯入</li>
+        <li>ASO 門市步印站 QR Code 系統建置（掃碼打卡 → 地圖標記）</li>
+        <li>超慢跑里程加倍計算邏輯（心率 API 串接 Garmin）</li>
+        <li>個人 / 家庭 / 隊伍多模式排行榜</li>
+        <li>RWD 全響應式網頁，ASO 品牌視覺客製化</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top: 4px solid var(--gem-jade);">
+      <div class="card-title" style="font-size:15px;">📣 H2U 媒體與社群資源</div>
+      <ul class="slist" style="margin-top:12px;">
+        <li>運動筆記社群觸及：350 萬健走 / 跑步會員</li>
+        <li>早安健康媒體觸及：熟齡健康族群 500 萬月瀏覽</li>
+        <li>健行筆記整合：50 萬健行愛好者（步道路線整合）</li>
+        <li>EDM 精準推播：依年齡 × 運動類型分群</li>
+        <li>ASO 健走月：早安健康「步態健康知識特輯」3 篇</li>
+        <li>超慢跑科學專題：KOL × 物理治療師 × 足健康師聯合背書</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub">雙重角色：技術商 × 健康內容夥伴</h3>
+  <table class="data-table">
+    <thead>
+      <tr><th>H2U 角色</th><th>提供內容</th><th>ASO 獲益</th><th>H2U 利益</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>iRunner 技術商</strong></td>
+        <td>全套賽事平台 × 步印系統</td>
+        <td>完整數位賽事基礎建設 × 跑者 CRM</td>
+        <td>平台服務費 × 會員導流</td>
+      </tr>
+      <tr>
+        <td><strong>早安健康媒體夥伴</strong></td>
+        <td>步態健康 × 超慢跑知識內容</td>
+        <td>品牌科學公信力背書 × 熟齡 TA 觸及</td>
+        <td>內容合作費 × 廣告曝光</td>
+      </tr>
+      <tr>
+        <td><strong>健行筆記路線整合商</strong></td>
+        <td>20 條 ASO 認證健走路線</td>
+        <td>O2O 路線品牌置入 × 健行族群導流</td>
+        <td>跨平台流量互導</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.8 KPI & SROI ════════════════════ -->
+<div style="background:#FAF5EF;">
+<div class="chapter" style="background: linear-gradient(135deg, #1E3A2A, #2E6040);">
+  <div class="ch-num">08</div>
+  <div>
+    <div class="ch-tag">KPI · 5-YEAR PLAN · SROI</div>
+    <div class="ch-title">效益評估體系 × 5 年計畫 × SROI 利害關係人分析</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">08 —</div>
+    <h2 class="sec-title">KPI 體系 × 五年滾動計畫 × SROI 分析框架</h2>
+  </div>
+
+  <!-- ── 8.1 2026 KPI ── -->
+  <h3 class="sub">8.1　2026 年首屆核心 KPI（活動期間 Q3–Q4）</h3>
+  <table class="data-table">
+    <thead>
+      <tr><th>指標類別</th><th>2026 量化目標</th><th>評量方法</th><th>戰略意義</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>參與人數</td>
+        <td class="hl">25,000 人+</td>
+        <td>健行筆記 APP 實名任務啟動數</td>
+        <td>品牌聲量 × 市場滲透</td>
+      </tr>
+      <tr>
+        <td>步數任務總步數</td>
+        <td class="hl">15 億步+</td>
+        <td>健行筆記 APP 平台累計步數</td>
+        <td>活動黏著度與日常參與深度</td>
+      </tr>
+      <tr>
+        <td>超慢跑累積里程</td>
+        <td class="hl">50,000 km+</td>
+        <td>Garmin / 跑步 APP 上傳數據</td>
+        <td>跑者族群轉換率指標</td>
+      </tr>
+      <tr>
+        <td>小百岳寶石解鎖人次</td>
+        <td class="hl">3,000 人次+</td>
+        <td>健行筆記 GPS 到點觸發記錄</td>
+        <td>登山族群觸及 × 山難教育覆蓋</td>
+      </tr>
+      <tr>
+        <td>ASO 百店寶石解鎖人次</td>
+        <td class="hl">8,000 人次+</td>
+        <td>健行筆記 GPS 門市打卡記錄</td>
+        <td>O2O 門市流量導入</td>
+      </tr>
+      <tr>
+        <td>門市 ASO+ 足測體驗人次</td>
+        <td class="hl">3,000 人次+</td>
+        <td>ASO+ 門市兌換紀錄</td>
+        <td>足健康業務最強轉換指標</td>
+      </tr>
+      <tr>
+        <td>長者足測捐贈達成</td>
+        <td class="hl">1,000 份（首年）</td>
+        <td>社福合作單位兌換記錄</td>
+        <td>SROI × ESG 公益核心指標</td>
+      </tr>
+      <tr>
+        <td>登山安全教育觸及人數</td>
+        <td class="hl">15,000 人+</td>
+        <td>離線地圖教學完成人次</td>
+        <td>公共衛生正外部效益</td>
+      </tr>
+      <tr>
+        <td>社群分享率（寶石分享）</td>
+        <td class="hl">≥ 50%</td>
+        <td>寶石分享按鈕點擊 / 解鎖人數</td>
+        <td>自然流量與口碑擴散</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── 8.2 5-YEAR PLAN ── -->
+  <h3 class="sub">8.2　五年滾動計畫（2026–2030）</h3>
+  <p class="prose">
+    本案以 2026 年為「驗證年」，逐年擴大規模，
+    在 2030 年達成<strong>全台最大規模健走生態圈、ASO 品牌年度行動力代言賽事</strong>之戰略定位。
+    每年的公益承諾（長者足測捐贈）與登山安全教育數字，作為 ASO ESG 年報的固定引用指標。
+  </p>
+
+  <div style="overflow-x:auto; margin:20px 0;">
+  <table class="data-table" style="min-width:800px;">
+    <thead>
+      <tr>
+        <th>年度</th>
+        <th>主題定位</th>
+        <th>參與人數目標</th>
+        <th>長者足測捐贈累計</th>
+        <th>登山安全教育觸及</th>
+        <th>核心新增項目</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:var(--aso-terra);">2026<br><small>Year 1</small></strong></td>
+        <td>驗證年<br><small>平台建置・系統測試</small></td>
+        <td class="hl">25,000 人+</td>
+        <td>1,000 份</td>
+        <td>15,000 人</td>
+        <td>雙系統上線、小百岳 100 座、百店 100 間</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--aso-terra);">2027<br><small>Year 2</small></strong></td>
+        <td>深化年<br><small>社群飛輪・品牌滲透</small></td>
+        <td class="hl">40,000 人+</td>
+        <td>累計 3,000 份</td>
+        <td>30,000 人</td>
+        <td>跑者社群深化、ASO+ 足測連動升級、企業員工健走方案</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--aso-terra);">2028<br><small>Year 3</small></strong></td>
+        <td>擴張年<br><small>異業聯盟・SROI 正式評估</small></td>
+        <td class="hl">60,000 人+</td>
+        <td>累計 6,000 份</td>
+        <td>50,000 人</td>
+        <td>首次委託第三方 SROI 正式評估報告、異業品牌加入聯名</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--aso-terra);">2029<br><small>Year 4</small></strong></td>
+        <td>成熟年<br><small>國際連結・B2B 延伸</small></td>
+        <td class="hl">80,000 人+</td>
+        <td>累計 10,000 份</td>
+        <td>70,000 人</td>
+        <td>企業員工健走 B2B 方案商業化、國際城市健走路線整合試行</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--aso-terra);">2030<br><small>Year 5</small></strong></td>
+        <td>品牌里程碑年<br><small>台灣最大健走生態圈</small></td>
+        <td class="hl">100,000 人+</td>
+        <td>累計 20,000 份</td>
+        <td>100,000 人</td>
+        <td>「ASO 步印計畫」成為 ASO 品牌年度核心行動，發布五年社會影響報告</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="hl-box">
+    <p>⚑ <strong>五年計畫核心邏輯：</strong>2026 年是「播種」，以謹慎的 2.5 萬人目標建立系統穩定性與數據基礎；
+    2027–2028 年是「發芽」，透過口碑飛輪與異業整合快速擴大；
+    2029–2030 年是「收成」，當 ASO 步印計畫的品牌資產積累足夠厚實，
+    才真正具備談 B2B 企業健康方案的議價能力與學術研究合作的基礎。
+    <strong>SROI 正式評估建議在 2028 年委託，此時數據樣本最具代表性。</strong></p>
+  </div>
+
+  <!-- ── 8.3 SROI STAKEHOLDERS ── -->
+  <h3 class="sub">8.3　SROI 利害關係人識別框架</h3>
+  <p class="prose">
+    依據 UK SROI Network《社會投資報酬率指南》（2012 修訂版）方法論，
+    參照田中馬拉松線上跑 SROI 評估報告（2022）之利害關係人識別架構，
+    本案預估下列利害關係人群體，並就其受影響之性質與量化方向進行初步評估。
+  </p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+  <table class="data-table" style="min-width:900px;">
+    <thead>
+      <tr>
+        <th>面向</th>
+        <th>利害關係人群體</th>
+        <th>主要成果（Outcomes）</th>
+        <th>量化方向</th>
+        <th>納入 SROI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 參與者 -->
+      <tr>
+        <td rowspan="3" style="font-weight:700; color:var(--aso-terra); vertical-align:top; padding-top:12px;">參與者</td>
+        <td><strong>健走參與者</strong><br><small>（一般健走模式）</small></td>
+        <td>規律運動習慣養成、心理健康改善（減壓）、社群歸屬感、身體自我認知提升</td>
+        <td>健走前後健康自評問卷、規律運動天數變化</td>
+        <td>✅ 主要</td>
+      </tr>
+      <tr>
+        <td><strong>超慢跑參與者</strong><br><small>（進階跑步模式）</small></td>
+        <td>有氧代謝改善、體重管理、自信心提升、血糖血壓正向改變</td>
+        <td>里程達標前後代謝指標自評、跑步滿意度量表</td>
+        <td>✅ 主要</td>
+      </tr>
+      <tr>
+        <td><strong>參與者家屬</strong><br><small>（家庭步印隊）</small></td>
+        <td>家庭互動增加、子女運動習慣影響、家庭健康意識提升</td>
+        <td>家庭活動問卷（非預期正向成果，參考田中馬拉松案例）</td>
+        <td>⚪ 次要</td>
+      </tr>
+
+      <!-- 主辦/執行 -->
+      <tr>
+        <td rowspan="2" style="font-weight:700; color:var(--aso-terra); vertical-align:top; padding-top:12px;">主辦/<br>執行方</td>
+        <td><strong>A.S.O 阿瘦實業</strong><br><small>（主辦品牌）</small></td>
+        <td>品牌形象提升（足健康專家定位）、門市流量增加、足測數據資產擴充、員工凝聚力</td>
+        <td>品牌好感度調查、門市來客數變化、足測新增筆數</td>
+        <td>✅ 主要</td>
+      </tr>
+      <tr>
+        <td><strong>H2U 永悅健康 ESG 卓越服務中心</strong><br><small>（執行方）</small></td>
+        <td>品牌曝光（早安健康 × 健行筆記媒體觸及）、平台用戶成長、ESG 能量積累</td>
+        <td>健行筆記 APP 新用戶數、早安健康媒體流量</td>
+        <td>✅ 主要</td>
+      </tr>
+
+      <!-- 合作平台 -->
+      <tr>
+        <td rowspan="2" style="font-weight:700; color:var(--aso-terra); vertical-align:top; padding-top:12px;">合作<br>平台</td>
+        <td><strong>健行筆記 APP</strong><br><small>（寶石任務平台）</small></td>
+        <td>小百岳路線曝光增加、用戶回訪率提升、離線地圖功能推廣</td>
+        <td>寶石任務觸發次數、離線地圖下載量</td>
+        <td>✅ 主要</td>
+      </tr>
+      <tr>
+        <td><strong>Garmin / 跑步 APP 品牌</strong><br><small>（數據來源夥伴）</small></td>
+        <td>品牌使用率提升、跑步數據上傳活躍用戶增加</td>
+        <td>數據上傳次數、設備使用頻率</td>
+        <td>⚪ 次要</td>
+      </tr>
+
+      <!-- 長者/公益 -->
+      <tr>
+        <td style="font-weight:700; color:var(--aso-terra); vertical-align:top; padding-top:12px;">公益<br>受益群體</td>
+        <td><strong>社區長者</strong><br><small>（足測受贈者）</small></td>
+        <td>步態異常早期發現、跌倒風險降低、生活品質改善、醫療支出節省</td>
+        <td>足測後步態改善率、跌倒事故追蹤（跌倒預防 NT$18 萬/次醫療成本節省）</td>
+        <td>✅ 核心</td>
+      </tr>
+
+      <!-- 政府/公部門 -->
+      <tr>
+        <td style="font-weight:700; color:var(--aso-terra); vertical-align:top; padding-top:12px;">政府/<br>公部門</td>
+        <td><strong>體育署 / 衛福部長照司</strong></td>
+        <td>國民健康促進目標達成、登山安全政策倡議落地、長照預防資源補充</td>
+        <td>可對應體育署「全民運動」KPI 貢獻量、登山教育覆蓋人數</td>
+        <td>⚪ 次要</td>
+      </tr>
+
+      <!-- 登山/步道生態 -->
+      <tr>
+        <td style="font-weight:700; color:var(--aso-terra); vertical-align:top; padding-top:12px;">山林/<br>步道生態</td>
+        <td><strong>小百岳步道環境</strong><br><small>（間接受影響）</small></td>
+        <td>登山人流增加→步道承載壓力（負面）；同時帶動步道維護意識（正面）</td>
+        <td>各步道訪客量變化、步道破壞案例追蹤（需與林務局協作監測）</td>
+        <td>⚠️ 負外部性監測</td>
+      </tr>
+
+      <!-- 媒體 -->
+      <tr>
+        <td style="font-weight:700; color:var(--aso-terra); vertical-align:top; padding-top:12px;">媒體</td>
+        <td><strong>運動筆記 / 早安健康 / 地方媒體</strong></td>
+        <td>流量增加、品牌合作收入、讀者健康知識提升</td>
+        <td>活動報導觸及人次、媒體價值估算（AVE）</td>
+        <td>⚪ 次要</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- SROI RATIO -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:28px 0;">
+    <div class="sroi-ratio" style="margin:0;">
+      <span class="sroi-n">1 : 4.5+</span>
+      <div style="font-size:13px; margin-top:10px; opacity:.9;">
+        預估 2026 年 SROI 比（初步估算）<br>
+        <small>主計入：長者跌倒預防醫療節省 + 健康行為促進效益 + 登山安全教育公共效益</small>
+      </div>
+    </div>
+    <div class="sroi-ratio" style="margin:0; background:linear-gradient(135deg,var(--aso-dark),#5C3A1E);">
+      <span class="sroi-n">1 : 6.5+</span>
+      <div style="font-size:13px; margin-top:10px; opacity:.9;">
+        預估 2030 年 SROI 比（五年成熟期）<br>
+        <small>加計：步態數據公共衛生學術價值 + B2B 企業健康方案社會效益</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-box">
+    📌 <strong>田中馬拉松 SROI 參考基準：</strong>田中馬拉松 2022 年線上雲端馬拉松（4,000 人參與）
+    之 SROI 評估結果為 <strong>NT$1 → NT$4.27 社會價值</strong>。
+    本案參與人數（25,000 人）約為其 6 倍，
+    且有足測長者公益、登山安全教育等田中馬拉松所沒有的獨特正外部效益維度，
+    預估 SROI 比率可達 1:4.5 以上。<br>
+    <strong>建議 2028 年（第 3 年）委託第三方機構進行正式 SROI 評估，以田中馬拉松報告為方法論對標。</strong>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.9 RISK ════════════════════ -->
+<!-- ════════════════════ CH.9 RISK ════════════════════ -->
+<div style="background:white;">
+<div class="chapter rose">
+  <div class="ch-num">09</div>
+  <div>
+    <div class="ch-tag">RISK ASSESSMENT</div>
+    <div class="ch-title">風險評估與緩解對策</div>
+  </div>
+</div>
+<div class="container">
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">09 —</div>
+    <h2 class="sec-title">風險評估與緩解對策</h2>
+  </div>
+
+  <div style="background:white; border:1px solid var(--border); border-radius:10px; overflow:hidden; margin:20px 0;">
+    <div style="display:grid; grid-template-columns:160px 1fr 80px; background:linear-gradient(to right, var(--aso-dark), var(--aso-brown)); color:white; padding:12px 14px; font-size:12px; font-weight:600;">
+      <span>風險項目</span><span>說明與對策</span><span>等級</span>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell"><strong>健走非跑步<br>活躍度疑慮</strong></div>
+      <div class="risk-cell">步行活動的每日互動頻率低於跑步賽事。<br><strong>對策：</strong>每週任務制（7 天累積步數重置）維持回訪動機；門市打卡增加線下互動頻率；超慢跑任務提供更高互動強度選項。</div>
+      <div class="risk-cell"><span class="badge high">高</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell"><strong>足測門市兌換<br>率不佳</strong></div>
+      <div class="risk-cell">虛擬寶石獎勵換實體服務的轉換率有落差。<br><strong>對策：</strong>「足測預約制」降低門市壓力同時提升轉換意願；腳麻 / 跌倒族群的針對性推播；搭配足測限定折扣券。</div>
+      <div class="risk-cell"><span class="badge high">高</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell"><strong>超慢跑傷害<br>免責聲明</strong></div>
+      <div class="risk-cell">活動涉及跑步，可能有膝蓋 / 足部傷害疑慮。<br><strong>對策：</strong>平台明確標示「活動量力而為」聲明；ASO 足健康師建議頁面置入；超慢跑入門教學 × 暖身動作強制閱讀。</div>
+      <div class="risk-cell"><span class="badge mid">中</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell"><strong>長者族群<br>數位落差</strong></div>
+      <div class="risk-cell">「萬步送健康」目標的長者受益群體，恰好是數位使用率最低的族群。<br><strong>對策：</strong>捐贈機制由社福單位直接執行，不需長者本人操作平台；門市員工協助兌換流程。</div>
+      <div class="risk-cell"><span class="badge mid">中</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell"><strong>門市配合度<br>差異</strong></div>
+      <div class="risk-cell">100 間門市的 ASO+ 足測設備普及度、員工訓練程度可能不一致。<br><strong>對策：</strong>「步印站」分三級：全功能足測站（30 間）× 掃碼打卡站（50 間）× 基礎兌換站（20 間）分階部署。</div>
+      <div class="risk-cell"><span class="badge low">低</span></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ════════════════════ CH.10 CLOSING ════════════════════ -->
+<div style="background: linear-gradient(160deg, var(--aso-dark) 0%, #4A2A10 60%, var(--aso-terra) 100%); padding: 80px 0;">
+<div class="container">
+  <div style="color:white; max-width:760px; margin: 0 auto; text-align:center;">
+    <div style="font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,255,0.35); letter-spacing:3px; margin-bottom:24px;">CHAPTER 10 · CONCLUSION</div>
+    <h2 style="font-family:'Noto Serif TC',serif; font-size:28px; font-weight:700; margin-bottom:28px; line-height:1.6;">
+      每一步，都走向更健康的自己<br>
+      <span style="color:var(--aso-warm);">每一步，都守護了別人的行動力</span>
+    </h2>
+    <p style="font-size:15px; color:rgba(255,255,255,0.72); line-height:2.2; margin-bottom:48px;">
+      74 年前，ASO 從一雙皮鞋開始，陪伴台灣人走過了每一個世代。
+      74 年後，ASO 擁有的不只是鞋——而是台灣最深的一份對「行走」的理解。
+      45 萬筆足壓數據，是 ASO 無聲積累的知識資產；
+      而「全民健走步印計畫」，就是讓這份資產走進每一個人生活的橋樑。
+      <br><br>
+      <strong style="color:white;">
+        走得更對，不只是一句 Slogan——
+        它是 ASO 給台灣最真實的承諾。
+      </strong>
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:2px; max-width:680px; margin: 0 auto 48px;">
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);padding:22px 14px;text-align:center;border-radius:8px 0 0 8px;">
+        <div style="font-family:'DM Mono',monospace;font-size:24px;color:var(--aso-warm);">74</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;">年品牌積累</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);padding:22px 14px;text-align:center;">
+        <div style="font-family:'DM Mono',monospace;font-size:24px;color:var(--aso-warm);">45萬</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;">筆足壓數據</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);padding:22px 14px;text-align:center;">
+        <div style="font-family:'DM Mono',monospace;font-size:24px;color:var(--aso-warm);">100+</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;">全台門市節點</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);padding:22px 14px;text-align:center;border-radius:0 8px 8px 0;">
+        <div style="font-family:'DM Mono',monospace;font-size:24px;color:var(--aso-warm);">2026</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:5px;">啟程</div>
+      </div>
+    </div>
+
+    <div class="sign-area">
+      <div style="text-align:center;">
+        <div class="sign-line"></div>
+        <div class="sign-title" style="color:rgba(255,255,255,0.4);">H2U 永悅健康 代表人<br><small>提案方</small></div>
+      </div>
+      <div style="text-align:center;">
+        <div class="sign-line"></div>
+        <div class="sign-title" style="color:rgba(255,255,255,0.4);">A.S.O 阿瘦實業 代表人<br><small>品牌主體</small></div>
+      </div>
+      <div style="text-align:center;">
+        <div class="sign-line"></div>
+        <div class="sign-title" style="color:rgba(255,255,255,0.4);">合作確認日期<br><small>日 / 月 / 年</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="page-footer">
+  <div><span class="conf">CONFIDENTIAL</span> — 本文件僅供提案使用，未經授權不得外流</div>
+  <div>ASO 阿瘦 × H2U 永悅健康 ESG 卓越服務中心 · 2026 全民健走步印計畫 · DOC-2026-ASO-H2U-v4.0</div>
+</div>
+
+</body>
+</html>
