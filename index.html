@@ -113,7 +113,7 @@
     color: rgba(255,255,255,0.2);
     letter-spacing: 0.1em;
   }
-  #main-content { display: none; }
+  #main-content { display: none !important; }
 
   /* ─── COVER ─── */
   .cover {
@@ -2315,7 +2315,7 @@
     const val = document.getElementById('pw-input').value;
     if (val === 'h2uaso') {
       document.getElementById('pw-gate').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('main-content').style.setProperty('display', 'block', 'important');
     } else {
       const err = document.getElementById('pw-error');
       err.textContent = '密碼錯誤，請再試一次';
