@@ -36,6 +36,85 @@
     line-height: 1.8;
   }
 
+  /* ─── PASSWORD GATE ─── */
+  #pw-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--aso-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+  }
+  #pw-gate .gate-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    color: var(--aso-stone);
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+  #pw-gate .gate-logo span {
+    color: var(--aso-warm);
+  }
+  #pw-gate h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 32px;
+    letter-spacing: 0.08em;
+  }
+  #pw-gate .gate-box {
+    display: flex;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 320px;
+  }
+  #pw-input {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border: none;
+    outline: none;
+    padding: 14px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    color: #fff;
+    caret-color: var(--aso-warm);
+  }
+  #pw-input::placeholder { color: rgba(255,255,255,0.25); letter-spacing:0.1em; }
+  #pw-btn {
+    background: var(--aso-terra);
+    border: none;
+    padding: 14px 22px;
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  #pw-btn:hover { background: var(--aso-brown); }
+  #pw-error {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #E06060;
+    min-height: 18px;
+    letter-spacing: 0.05em;
+  }
+  #pw-hint {
+    margin-top: 40px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.1em;
+  }
+  #main-content { display: none; }
+
   /* ─── COVER ─── */
   .cover {
     min-height: 100vh;
@@ -740,6 +819,21 @@
 </style>
 </head>
 <body>
+
+<!-- PASSWORD GATE -->
+<div id="pw-gate">
+  <div class="gate-logo">A.S.O 阿瘦 × <span>H2U</span> 永悅健康</div>
+  <h2>請輸入通行密碼</h2>
+  <div class="gate-box">
+    <input id="pw-input" type="password" placeholder="password" autocomplete="off" />
+    <button id="pw-btn" onclick="checkPw()">進入</button>
+  </div>
+  <div id="pw-error"></div>
+  <div id="pw-hint">本文件為機密提案，僅供授權人員閱覽</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
 
 <!-- ════════════════════ COVER ════════════════════ -->
 <div class="cover">
@@ -2213,6 +2307,27 @@
   <div><span class="conf">CONFIDENTIAL</span> — 本文件僅供提案使用，未經授權不得外流</div>
   <div>ASO 阿瘦 × H2U 永悅健康 ESG 卓越服務中心 · 2026 全民健走步印計畫 · DOC-2026-ASO-H2U-v4.0</div>
 </div>
+
+</div><!-- /main-content -->
+
+<script>
+  function checkPw() {
+    const val = document.getElementById('pw-input').value;
+    if (val === 'h2uaso') {
+      document.getElementById('pw-gate').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    } else {
+      const err = document.getElementById('pw-error');
+      err.textContent = '密碼錯誤，請再試一次';
+      document.getElementById('pw-input').value = '';
+      document.getElementById('pw-input').focus();
+      setTimeout(() => { err.textContent = ''; }, 3000);
+    }
+  }
+  document.getElementById('pw-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPw();
+  });
+</script>
 
 </body>
 </html>
